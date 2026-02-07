@@ -1,7 +1,7 @@
 /**
  * useLocalStorage - persist state in localStorage
  */
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const [storedValue, setStoredValue] = useState<T>(() => {
