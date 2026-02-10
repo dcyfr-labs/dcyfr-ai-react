@@ -1,6 +1,6 @@
 {
   "name": "@dcyfr/ai-react",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Production-ready React SPA template with TypeScript, Vite, TanStack Router, Zustand, and Shadcn/ui",
   "type": "module",
   "private": true,
