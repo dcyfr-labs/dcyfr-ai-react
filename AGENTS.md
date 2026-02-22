@@ -38,3 +38,8 @@ npm run lint         # ESLint
 - Environment: jsdom 25
 - Setup: `tests/setup.ts` (jest-dom matchers)
 - 57 tests across 8 test files
+
+## Quality Gates
+- TypeScript: 0 errors (`npm run typecheck`)
+- Tests: ≥99% pass rate (`npm run test`)
+- Lint: 0 errors (`npm run lint`)
