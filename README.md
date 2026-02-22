@@ -15,6 +15,32 @@ Perfect for building scalable single-page applications with full type safety, op
 
 ---
 
+## ⚡ 30-Second Quick Start
+
+```bash
+# Clone template
+npx degit dcyfr/dcyfr-ai-react my-react-app
+cd my-react-app
+
+# Install and start
+npm install
+npm run dev
+# ✅ React app at http://localhost:3000
+```
+
+---
+
+## 🧭 Related Packages
+
+| Package | Purpose | Type |
+|---------|---------|------|
+| [@dcyfr/ai](../dcyfr-ai) | Core AI framework | npm package |
+| [@dcyfr/ai-chatbot](../dcyfr-ai-chatbot) | Chatbot template | Template |
+| [@dcyfr/ai-nodejs](../dcyfr-ai-nodejs) | Node.js starter | Template |
+| [dcyfr-labs](../dcyfr-labs) | Production Next.js app | Application |
+
+---
+
 ## First Steps After Installation
 
 1. **Start the dev server:** `npm run dev` → [http://localhost:3000](http://localhost:3000)
