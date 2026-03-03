@@ -44,7 +44,7 @@ npm run dev
 
 | Package | Purpose | Type |
 |---------|---------|------|
-| [@dcyfr/ai](../dcyfr-ai) | Core AI framework | npm package |
+| [@dcyfr/ai](../dcyfr-ai) | Core AI harness | npm package |
 | [@dcyfr/ai-chatbot](../dcyfr-ai-chatbot) | Chatbot template | Template |
 | [@dcyfr/ai-nodejs](../dcyfr-ai-nodejs) | Node.js starter | Template |
 | [dcyfr-labs](../dcyfr-labs) | Production Next.js app | Application |
