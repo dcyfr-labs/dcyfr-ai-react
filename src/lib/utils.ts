@@ -1,2 +1,9 @@
-// Re-export from @dcyfr/utils — prefer importing directly from @dcyfr/utils
-export { cn } from '@dcyfr/utils';
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+
+/**
+ * Merge Tailwind classes with conflict resolution.
+ */
+export function cn(...inputs: ClassValue[]) {
+	return twMerge(clsx(inputs));
+}

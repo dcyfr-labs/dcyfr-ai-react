@@ -17,6 +17,7 @@
     "test:coverage": "vitest run --coverage",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
+    "type-check": "tsc --noEmit",
     "typecheck": "tsc --noEmit",
     "format": "prettier --write .",
     "changeset": "changeset",
