@@ -25,7 +25,6 @@
     "release": "npm run build && changeset publish"
   },
   "dependencies": {
-    "@dcyfr/utils": "*",
     "@tanstack/react-query": "^5.90.21",
     "@tanstack/react-router": "^1.95.0",
     "clsx": "^2.1.1",
