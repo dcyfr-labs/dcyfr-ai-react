@@ -37,12 +37,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Load secrets from 1Password
-        uses: 1password/load-secrets-action@v1
+        uses: 1password/load-secrets-action@v3
         with:
           export-env: true
         env:
@@ -67,7 +67,7 @@ jobs:
           fi
 
       - name: Run SonarCloud scan
-        uses: SonarSource/sonarqube-scan-action@v6.0.0
+        uses: SonarSource/sonarqube-scan-action@v7.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ env.SONAR_TOKEN }}
