@@ -64,5 +64,11 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/dcyfr/dcyfr-ai-react"
-  }
+  },
+  "author": "DCYFR Labs",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dcyfr/dcyfr-ai-react/issues"
+  },
+  "homepage": "https://github.com/dcyfr/dcyfr-ai-react#readme"
 }
