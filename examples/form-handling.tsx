@@ -76,7 +76,7 @@ function validateWithZod<T>(schema: z.ZodSchema<T>, data: any): {
   }
 
   const errors: FormErrors<T> = {};
-  result.error.errors.forEach((err) => {
+  result.error.issues.forEach((err) => {
     const path = err.path.join('.') as keyof T;
     errors[path] = err.message;
   });
@@ -127,7 +127,7 @@ export function RegistrationForm() {
     if (result && !result.success) {
       setErrors((prev) => ({
         ...prev,
-        [field]: result.error.errors[0]?.message,
+        [field]: result.error.issues[0]?.message,
       }));
     }
   }, [formData]);
