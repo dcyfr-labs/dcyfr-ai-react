@@ -1,5 +1,13 @@
 # @dcyfr/ai-react
 
+<!-- README-META
+  tlp_clearance: GREEN
+  status: active
+  name: dcyfr-ai-react
+  description: Production-ready React SPA template with TypeScript, Vite, TanStack Router, Zustand, and Shadcn/ui
+  last_validated: 2026-03-29
+-->
+
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dcyfr/dcyfr-ai-react)
 
 [![React](https://img.shields.io/badge/React-18+-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
