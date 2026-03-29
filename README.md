@@ -14,6 +14,15 @@
 
 Perfect for building scalable single-page applications with full type safety, optimistic UI updates, and exceptional developer experience.
 
+## About DCYFR
+
+`@dcyfr/ai-react` is maintained by **DCYFR Labs** as part of the DCYFR starter template portfolio.
+
+- **DCYFR** is a registered trademark of DCYFR Labs.
+- Primary domain: [www.dcyfr.ai](https://www.dcyfr.ai)
+- Trademark guidance: [../TRADEMARK.md](../TRADEMARK.md)
+- Licensing details: [LICENSE](./LICENSE)
+
 ✅ **Modern Stack** - React 19, Vite 6, TypeScript 5.7+  
 ✅ **Type-Safe Routing** - TanStack Router with file-based routes  
 ✅ **Smart State** - Zustand for client state, React Query for server state  
@@ -42,12 +51,12 @@ npm run dev
 
 ## 🧭 Related Packages
 
-| Package | Purpose | Type |
-|---------|---------|------|
-| [@dcyfr/ai](../dcyfr-ai) | Core AI harness | npm package |
-| [@dcyfr/ai-chatbot](../dcyfr-ai-chatbot) | Chatbot template | Template |
-| [@dcyfr/ai-nodejs](../dcyfr-ai-nodejs) | Node.js starter | Template |
-| [dcyfr-labs](../dcyfr-labs) | Production Next.js app | Application |
+| Package                                  | Purpose                | Type        |
+| ---------------------------------------- | ---------------------- | ----------- |
+| [@dcyfr/ai](../dcyfr-ai)                 | Core AI harness        | npm package |
+| [@dcyfr/ai-chatbot](../dcyfr-ai-chatbot) | Chatbot template       | Template    |
+| [@dcyfr/ai-nodejs](../dcyfr-ai-nodejs)   | Node.js starter        | Template    |
+| [dcyfr-labs](../dcyfr-labs)              | Production Next.js app | Application |
 
 ---
 
@@ -61,17 +70,17 @@ npm run dev
 
 ## Tech Stack
 
-| Category | Technology | Version |
-|----------|-----------|---------|
-| **Framework** | React | 19 |
-| **Language** | TypeScript | 5.7+ |
-| **Bundler** | Vite | 6 |
-| **Routing** | TanStack Router | 1.95+ |
-| **Server State** | TanStack React Query | 5.62+ |
-| **Client State** | Zustand | 5 |
-| **Styling** | Tailwind CSS | 3.4 |
-| **Validation** | Zod | 3.24+ |
-| **Testing** | Vitest + React Testing Library | 2.1 / 16.1 |
+| Category         | Technology                     | Version    |
+| ---------------- | ------------------------------ | ---------- |
+| **Framework**    | React                          | 19         |
+| **Language**     | TypeScript                     | 5.7+       |
+| **Bundler**      | Vite                           | 6          |
+| **Routing**      | TanStack Router                | 1.95+      |
+| **Server State** | TanStack React Query           | 5.62+      |
+| **Client State** | Zustand                        | 5          |
+| **Styling**      | Tailwind CSS                   | 3.4        |
+| **Validation**   | Zod                            | 3.24+      |
+| **Testing**      | Vitest + React Testing Library | 2.1 / 16.1 |
 
 ## Quick Start
 
@@ -157,11 +166,11 @@ dcyfr-ai-react/
 ### Type-Safe Routing (TanStack Router)
 
 ```typescript
-import { createRoute } from '@tanstack/react-router';
+import { createRoute } from "@tanstack/react-router";
 
 const myRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/my-page',
+  path: "/my-page",
   component: MyPage,
 });
 ```
@@ -169,7 +178,7 @@ const myRoute = createRoute({
 ### State Management (Zustand)
 
 ```typescript
-import { create } from 'zustand';
+import { create } from "zustand";
 
 interface MyState {
   value: string;
@@ -177,7 +186,7 @@ interface MyState {
 }
 
 export const useMyStore = create<MyState>((set) => ({
-  value: '',
+  value: "",
   setValue: (v) => set({ value: v }),
 }));
 ```
@@ -185,12 +194,12 @@ export const useMyStore = create<MyState>((set) => ({
 ### Typed API Client
 
 ```typescript
-import { apiClient } from '@/services/api-client';
-import { z } from 'zod';
+import { apiClient } from "@/services/api-client";
+import { z } from "zod";
 
 const UserSchema = z.object({ id: z.number(), name: z.string() });
 
-const user = await apiClient.get('/users/1', UserSchema);
+const user = await apiClient.get("/users/1", UserSchema);
 // user is typed as { id: number; name: string }
 ```
 
@@ -210,13 +219,13 @@ import { Button, Card, Badge } from '@/components/ui';
 
 ### Test Coverage
 
-| Category | Tests | Status |
-|----------|-------|--------|
-| Components | 19 | ✅ Passing |
-| Hooks | 4 | ✅ Passing |
-| Services | 3 | ✅ Passing |
-| Stores | 8 | ✅ Passing |
-| **Total** | **34** | **✅ 99% Pass Rate** |
+| Category   | Tests  | Status               |
+| ---------- | ------ | -------------------- |
+| Components | 19     | ✅ Passing           |
+| Hooks      | 4      | ✅ Passing           |
+| Services   | 3      | ✅ Passing           |
+| Stores     | 8      | ✅ Passing           |
+| **Total**  | **34** | **✅ 99% Pass Rate** |
 
 ---
 
@@ -242,21 +251,25 @@ The `examples/` directory contains executable TypeScript examples:
 Reusable hooks for common patterns:
 
 ```typescript
-import { useForm, useDebounce, useLocalStorage } from './examples/custom-hooks';
+import { useForm, useDebounce, useLocalStorage } from "./examples/custom-hooks";
 
 // Form with validation
 const form = useForm({
-  initialValues: { email: '', password: '' },
-  validationRules: { /* Zod-like rules */ },
-  onSubmit: async (values) => { /* API call */ },
+  initialValues: { email: "", password: "" },
+  validationRules: {
+    /* Zod-like rules */
+  },
+  onSubmit: async (values) => {
+    /* API call */
+  },
 });
 
 // Debounced search
-const [searchTerm, setSearchTerm] = useState('');
+const [searchTerm, setSearchTerm] = useState("");
 const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
 // Persisted theme
-const [theme, setTheme] = useLocalStorage<'light' | 'dark'>('theme', 'light');
+const [theme, setTheme] = useLocalStorage<"light" | "dark">("theme", "light");
 ```
 
 ### 2. Form Handling (`examples/form-handling.tsx`)
@@ -310,6 +323,7 @@ vercel --prod
 ```
 
 Set environment variables in Vercel Dashboard:
+
 ```env
 VITE_API_URL=https://api.example.com
 ```
@@ -357,16 +371,16 @@ VITE_ENABLE_DEVTOOLS=false
 
 ## Scripts Reference
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start dev server with HMR |
-| `npm run build` | Build for production (optimized) |
-| `npm run preview` | Preview production build locally |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm run lint` | Run ESLint |
-| `npm run test:run` | Run all tests once |
-| `npm run test:watch` | Run tests in watch mode |
-| `npm run test:coverage` | Generate coverage report |
+| Command                 | Description                      |
+| ----------------------- | -------------------------------- |
+| `npm run dev`           | Start dev server with HMR        |
+| `npm run build`         | Build for production (optimized) |
+| `npm run preview`       | Preview production build locally |
+| `npm run typecheck`     | Run TypeScript type checking     |
+| `npm run lint`          | Run ESLint                       |
+| `npm run test:run`      | Run all tests once               |
+| `npm run test:watch`    | Run tests in watch mode          |
+| `npm run test:coverage` | Generate coverage report         |
 
 ---
 
@@ -377,6 +391,7 @@ VITE_ENABLE_DEVTOOLS=false
 **Problem:** Port 3000 already in use.
 
 **Solution:**
+
 ```bash
 # Use different port
 npm run dev -- --port 3001
@@ -387,6 +402,7 @@ npm run dev -- --port 3001
 **Problem:** `import.meta.env.API_URL` is undefined.
 
 **Solution:** Ensure the variable starts with `VITE_`:
+
 ```env
 ❌ API_URL=https://api.example.com
 ✅ VITE_API_URL=https://api.example.com
@@ -411,6 +427,7 @@ Contributions are welcome! Please follow these steps:
 5. Open a Pull Request
 
 **Code Style:**
+
 - Follow existing TypeScript conventions
 - Add tests for new features
 - Update documentation for API changes
@@ -445,9 +462,9 @@ Contributions are welcome! Please follow these steps:
 **Maintained by:** DCYFR Labs  
 **Last Updated:** February 7, 2026
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `VITE_API_URL` | Backend API base URL | `/api` |
+| Variable       | Description          | Default |
+| -------------- | -------------------- | ------- |
+| `VITE_API_URL` | Backend API base URL | `/api`  |
 
 Copy `.env.example` to `.env` and configure as needed.
 

@@ -187,6 +187,8 @@ export function UserProfile({ userId }: { userId: number }) {
     );
   }
 
+  if (!user) return null;
+
   return (
     <div className="rounded border p-4">
       {user.avatar && (
@@ -330,6 +332,8 @@ export function InfinitePostList() {
       </div>
     );
   }
+
+  if (!data) return null;
 
   return (
     <div className="space-y-4">
