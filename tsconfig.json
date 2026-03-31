@@ -21,6 +21,7 @@
     "incremental": true,
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
     "outDir": "./dist",
+        "ignoreDeprecations": "6.0",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
