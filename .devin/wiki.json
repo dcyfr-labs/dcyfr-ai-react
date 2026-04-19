@@ -1,0 +1,8 @@
+{
+  "repo_notes": [
+    {
+      "content": "React component library and hooks for building AI-enabled user interfaces. Document the React components, custom hooks for AI interactions, state management patterns, and integration with the DCYFR AI API.",
+      "author": "DCYFR Engineering"
+    }
+  ]
+}
