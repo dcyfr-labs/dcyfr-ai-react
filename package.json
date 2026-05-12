@@ -74,5 +74,8 @@
   "bugs": {
     "url": "https://github.com/dcyfr-labs/dcyfr-ai-react/issues"
   },
-  "homepage": "https://github.com/dcyfr-labs/dcyfr-ai-react#readme"
+  "homepage": "https://github.com/dcyfr-labs/dcyfr-ai-react#readme",
+  "overrides": {
+    "@tanstack/history": "1.161.6"
+  }
 }
