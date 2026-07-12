@@ -4,17 +4,18 @@
   tlp_clearance: GREEN
   status: active
   name: dcyfr-ai-react
-  description: Production-ready React SPA template with TypeScript, Vite, TanStack Router, Zustand, and Shadcn/ui
-  last_validated: 2026-03-29
+  description: Production-ready React SPA template with TypeScript, Vite, TanStack Router, Zustand, and Tailwind CSS
+  last_validated: 2026-07-11
 -->
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dcyfr-labs/dcyfr-ai-react)
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?style=flat-square&logo=react&logoColor=black)](https://reactjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![Vite](https://img.shields.io/badge/Vite-Build-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Template](https://img.shields.io/badge/Template-Starter-blue?style=flat-square&logo=github)](https://github.com/dcyfr)
+[![TypeScript](https://img.shields.io/badge/TypeScript-6.0-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind](https://img.shields.io/badge/Tailwind-4-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![CI](https://github.com/dcyfr-labs/dcyfr-ai-react/actions/workflows/ci.yml/badge.svg)](https://github.com/dcyfr-labs/dcyfr-ai-react/actions/workflows/ci.yml)
+[![Template](https://img.shields.io/badge/Template-Starter-blue?style=flat-square&logo=github)](https://github.com/dcyfr-labs)
 [![Sponsor](https://img.shields.io/badge/sponsor-30363D?style=flat-square&logo=GitHub-Sponsors&logoColor=#EA4AAA)](https://github.com/sponsors/dcyfr)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
@@ -28,15 +29,15 @@ Perfect for building scalable single-page applications with full type safety, op
 
 - **DCYFR** is a registered trademark of DCYFR Labs.
 - Primary domain: [www.dcyfr.ai](https://www.dcyfr.ai)
-- Trademark guidance: [../TRADEMARK.md](../TRADEMARK.md)
 - Licensing details: [LICENSE](./LICENSE)
+- Security policy: [SECURITY.md](./SECURITY.md)
 
-✅ **Modern Stack** - React 19, Vite 6, TypeScript 5.7+  
+✅ **Modern Stack** - React 19, Vite 8, TypeScript 6.0  
 ✅ **Type-Safe Routing** - TanStack Router with file-based routes  
 ✅ **Smart State** - Zustand for client state, React Query for server state  
-✅ **UI Components** - Pre-built components with Tailwind CSS  
+✅ **UI Components** - Pre-built components with Tailwind CSS 4  
 ✅ **Validation** - Zod schemas for runtime type checking  
-✅ **Testing** - Vitest + React Testing Library (99% pass rate)  
+✅ **Testing** - Vitest + React Testing Library (57 tests)  
 ✅ **Developer Experience** - Fast HMR, auto-imports, strict TypeScript  
 ✅ **Production Ready** - Optimized builds, code splitting, prefetching
 
@@ -46,7 +47,7 @@ Perfect for building scalable single-page applications with full type safety, op
 
 ```bash
 # Clone template
-npx degit dcyfr/dcyfr-ai-react my-react-app
+npx degit dcyfr-labs/dcyfr-ai-react my-react-app
 cd my-react-app
 
 # Install and start
@@ -61,10 +62,10 @@ npm run dev
 
 | Package                                  | Purpose                | Type        |
 | ---------------------------------------- | ---------------------- | ----------- |
-| [@dcyfr/ai](../dcyfr-ai)                 | Core AI harness        | npm package |
-| [@dcyfr/ai-chatbot](../dcyfr-ai-chatbot) | Chatbot template       | Template    |
-| [@dcyfr/ai-nodejs](../dcyfr-ai-nodejs)   | Node.js starter        | Template    |
-| [dcyfr-labs](../dcyfr-labs)              | Production Next.js app | Application |
+| [@dcyfr/ai](https://github.com/dcyfr-labs/dcyfr-ai)                 | Core AI harness        | npm package |
+| [@dcyfr/ai-chatbot](https://github.com/dcyfr-labs/dcyfr-ai-chatbot) | Chatbot template       | Template    |
+| [@dcyfr/ai-nodejs](https://github.com/dcyfr-labs/dcyfr-ai-nodejs)   | Node.js starter        | Template    |
+| [dcyfr-labs](https://github.com/dcyfr-labs/dcyfr-labs)              | Production Next.js app | Application |
 
 ---
 
@@ -80,15 +81,15 @@ npm run dev
 
 | Category         | Technology                     | Version    |
 | ---------------- | ------------------------------ | ---------- |
-| **Framework**    | React                          | 19         |
-| **Language**     | TypeScript                     | 5.7+       |
-| **Bundler**      | Vite                           | 6          |
-| **Routing**      | TanStack Router                | 1.95+      |
-| **Server State** | TanStack React Query           | 5.62+      |
-| **Client State** | Zustand                        | 5          |
-| **Styling**      | Tailwind CSS                   | 3.4        |
-| **Validation**   | Zod                            | 3.24+      |
-| **Testing**      | Vitest + React Testing Library | 2.1 / 16.1 |
+| **Framework**    | React                          | 19          |
+| **Language**     | TypeScript                     | 6.0         |
+| **Bundler**      | Vite                           | 8           |
+| **Routing**      | TanStack Router                | 1.170+      |
+| **Server State** | TanStack React Query           | 5.101+      |
+| **Client State** | Zustand                        | 5           |
+| **Styling**      | Tailwind CSS                   | 4           |
+| **Validation**   | Zod                            | 4           |
+| **Testing**      | Vitest + React Testing Library | 4 / 16      |
 
 ## Quick Start
 
@@ -225,15 +226,23 @@ import { Button, Card, Badge } from '@/components/ui';
 
 ## Environment Variables
 
+The template reads a single variable (in `src/config/index.ts` and `src/services/api-client.ts`):
+
+```env
+VITE_API_URL=https://api.example.com   # API base URL (defaults to /api)
+```
+
+All Vite env vars must start with `VITE_` to be exposed to the client.
+
 ### Test Coverage
 
-| Category   | Tests  | Status               |
-| ---------- | ------ | -------------------- |
-| Components | 19     | ✅ Passing           |
-| Hooks      | 4      | ✅ Passing           |
-| Services   | 3      | ✅ Passing           |
-| Stores     | 8      | ✅ Passing           |
-| **Total**  | **34** | **✅ 99% Pass Rate** |
+| Category   | Tests  | Status     |
+| ---------- | ------ | ---------- |
+| Components | 28     | ✅ Passing |
+| Hooks      | 4      | ✅ Passing |
+| Services   | 11     | ✅ Passing |
+| Stores     | 14     | ✅ Passing |
+| **Total**  | **57** | ✅ Passing |
 
 ---
 
@@ -241,12 +250,11 @@ import { Button, Card, Badge } from '@/components/ui';
 
 Comprehensive guides in the `docs/` directory:
 
-- **[Routing Guide](docs/ROUTING.md)** (604 lines) - TanStack Router patterns, type-safe search params, route loaders, code splitting, navigation guards
-- **[State Management](docs/STATE_MANAGEMENT.md)** (757 lines) - Zustand + React Query patterns, optimistic updates, pagination, cache management
-- **[Testing Guide](docs/TESTING.md)** (771 lines) - Vitest + RTL best practices, mocking, async testing, testing hooks/stores/queries
-- **[Deployment Guide](docs/DEPLOYMENT.md)** (801 lines) - Vercel, Netlify, Docker, AWS S3 + CloudFront, GitHub Pages, environment variables
-
-**Total:** 2,933 lines of production-ready documentation.
+- **[API Reference](docs/API.md)** - Components, hooks, stores, services, and utilities
+- **[Routing Guide](docs/ROUTING.md)** - TanStack Router patterns, type-safe search params, route loaders, code splitting, navigation guards
+- **[State Management](docs/STATE_MANAGEMENT.md)** - Zustand + React Query patterns, optimistic updates, pagination, cache management
+- **[Testing Guide](docs/TESTING.md)** - Vitest + RTL best practices, mocking, async testing, testing hooks/stores/queries
+- **[Deployment Guide](docs/DEPLOYMENT.md)** - Vercel, Netlify, Docker, AWS S3 + CloudFront, GitHub Pages, environment variables
 
 ---
 
@@ -311,7 +319,6 @@ import { UserProfile, InfinitePostList, PostWithComments } from './examples/data
 <PostWithComments postId={1} />
 ```
 
-**Total:** 1,640 lines of production-quality examples.
 
 ---
 
@@ -338,6 +345,8 @@ VITE_API_URL=https://api.example.com
 
 ### Docker Deployment
 
+The repo ships no `Dockerfile` — copy the ready-made Nginx-based Dockerfile from the [Deployment Guide](docs/DEPLOYMENT.md#docker-deployment) into your project first, then:
+
 ```bash
 # Build image
 docker build -t my-react-app .
@@ -346,24 +355,18 @@ docker build -t my-react-app .
 docker run -d -p 8080:80 my-react-app
 ```
 
-See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for Netlify, GitHub Pages, AWS S3, and Kubernetes deployment guides.
+See [DEPLOYMENT.md](docs/DEPLOYMENT.md) for Netlify, GitHub Pages, and AWS S3 + CloudFront deployment guides.
 
 ---
 
 ## Production Environment Variables
 
 ```env
-# Production API endpoint
+# Production API endpoint — the only env var the template reads
 VITE_API_URL=https://api.production.com
-
-# App environment
-VITE_APP_ENV=production
-
-# Disable dev tools in production
-VITE_ENABLE_DEVTOOLS=false
 ```
 
-**Important:** All Vite env vars must start with `VITE_` to be exposed to the client.
+**Important:** All Vite env vars must start with `VITE_` to be exposed to the client. If you add your own (e.g. feature flags), follow the same prefix rule.
 
 ---
 
@@ -449,7 +452,7 @@ Contributions are welcome! Please follow these steps:
 - [ ] PWA support (service workers, offline mode)
 - [ ] Internationalization (i18n) with react-i18next
 - [ ] E2E testing with Playwright
-- [ ] GitHub Actions CI/CD workflows
+- [x] GitHub Actions CI/CD workflows
 - [ ] Bundle size analysis and optimization
 - [ ] Accessibility audit with jest-axe
 - [ ] Performance monitoring with Web Vitals
@@ -468,4 +471,4 @@ Contributions are welcome! Please follow these steps:
 
 **License:** MIT  
 **Maintained by:** DCYFR Labs  
-**Last Updated:** April 2026
+**Last Updated:** July 2026
