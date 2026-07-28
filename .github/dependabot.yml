@@ -10,6 +10,24 @@ updates:
       time: "04:00"
       timezone: "UTC"
     open-pull-requests-limit: 10
+
+    # react and react-dom must move in lockstep: react-dom asserts at runtime
+    # that both packages report the exact same version, so a solo bump of
+    # either one fails every test file that renders (5/8 files, PRs #198/#207).
+    # Ungrouped, neither PR can ever go green, so auto-merge never fires and
+    # React updates deadlock permanently. Their @types/* follow the same pair.
+    # Mirrors the `nextjs-core` group in dcyfr-labs/dcyfr-labs.
+    groups:
+      react-core:
+        patterns:
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+        update-types:
+          - "minor"
+          - "patch"
+
     labels:
       - "dependencies"
       - "automated"
