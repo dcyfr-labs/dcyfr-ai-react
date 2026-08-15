@@ -12,3 +12,6 @@ coverage/
 .env*.local
 .DS_Store
 *.tsbuildinfo
+
+# claude code session machinery (worktrees, local settings)
+.claude/
