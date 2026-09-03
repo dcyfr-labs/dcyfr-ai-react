@@ -1,8 +1,42 @@
 {
   "repo_notes": [
     {
-      "content": "React component library and hooks for building AI-enabled user interfaces. Document the React components, custom hooks for AI interactions, state management patterns, and integration with the DCYFR AI API.",
-      "author": "DCYFR Engineering"
+      "content": "A starter template. The chosen stack — Vite, TanStack Router, Zustand, Tailwind — is the thing being documented, more than any single component.",
+      "author": "rei-doc-specialist"
+    },
+    {
+      "content": "Routing is file-driven under src/routes/; explain that convention before listing components.",
+      "author": "rei-doc-specialist"
+    }
+  ],
+  "pages": [
+    {
+      "title": "Application Architecture",
+      "purpose": "The stack and how it fits together: Vite build, TanStack Router, Zustand stores, Tailwind styling, and the app entrypoint."
+    },
+    {
+      "title": "Routing",
+      "purpose": "The routes under src/routes/: the routing convention, nested layouts, loaders and navigation.",
+      "parent": "Application Architecture"
+    },
+    {
+      "title": "Components",
+      "purpose": "The components under src/components/: composition patterns, prop conventions and the styling approach.",
+      "parent": "Application Architecture"
+    },
+    {
+      "title": "State Management",
+      "purpose": "The Zustand stores under src/stores/: what belongs in global state, store shape and selector patterns.",
+      "parent": "Application Architecture"
+    },
+    {
+      "title": "Hooks and Services",
+      "purpose": "The custom hooks under src/hooks/ and the service layer under src/services/ that talks to a backend.",
+      "parent": "Application Architecture"
+    },
+    {
+      "title": "Testing",
+      "purpose": "The Vitest and Testing Library setup and what the component, hook, store and service tests cover."
     }
   ]
 }
