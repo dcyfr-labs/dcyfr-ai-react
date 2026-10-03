@@ -27,6 +27,15 @@ updates:
         update-types:
           - "minor"
           - "patch"
+      # vitest and @vitest/* must move in lockstep: every @vitest/* plugin
+      # (coverage-v8, ui, browser-*) pins an exact `vitest` peer and refuses
+      # to run against a different version. Ungrouped, Dependabot opens one
+      # PR per package and each fails alone; that deadlocked vitest 5.0.1 in
+      # dcyfr-ai-docker and dcyfr-ai-kubernetes. Only `vitest` is a direct
+      # dependency here today; the group keeps any future @vitest/* in step.
+      # No update-types filter: the deadlock bites hardest on majors.
+      vitest:
+        patterns: ["vitest", "@vitest/*"]
 
     labels:
       - "dependencies"
