@@ -75,6 +75,6 @@
   },
   "homepage": "https://github.com/dcyfr-labs/dcyfr-ai-react#readme",
   "overrides": {
-    "@tanstack/history": "1.161.6"
+    "@tanstack/history": "1.162.4"
   }
 }
