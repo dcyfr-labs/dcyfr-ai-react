@@ -27,7 +27,7 @@ Perfect for building scalable single-page applications with full type safety, op
 
 `@dcyfr/ai-react` is maintained by **DCYFR Labs** as part of the DCYFR starter template portfolio.
 
-- **DCYFR** is a registered trademark of DCYFR Labs.
+- **DCYFR** is a trademark of DCYFR Labs.
 - Primary domain: [www.dcyfr.ai](https://www.dcyfr.ai)
 - Licensing details: [LICENSE](./LICENSE)
 - Security policy: [SECURITY.md](./SECURITY.md)
