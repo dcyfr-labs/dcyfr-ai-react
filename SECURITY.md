@@ -488,7 +488,7 @@ In case of a security breach:
 ## Contact
 
 **Security Team:** security@dcyfr.ai  
-**Bug Reports:** https://github.com/dcyfr/dcyfr-ai-react/security/advisories  
+**Bug Reports:** https://github.com/dcyfr-labs/dcyfr-ai-react/security/advisories  
 **General Support:** hello@dcyfr.ai
 
 ---

@@ -995,7 +995,7 @@ This v1.0.0 release marks API stability. Future changes will follow semantic ver
 ## Support
 
 - **Documentation:** [Full docs](https://dcyfr.ai/docs/ai-react)
-- **GitHub:** [Issues & Discussions](https://github.com/dcyfr/dcyfr-ai-react)
+- **GitHub:** [Issues & Discussions](https://github.com/dcyfr-labs/dcyfr-ai-react)
 - **Email:** hello@dcyfr.ai
 
 ---
