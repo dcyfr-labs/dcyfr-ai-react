@@ -64,8 +64,8 @@ npm run dev
 | ---------------------------------------- | ---------------------- | ----------- |
 | [@dcyfr/ai](https://github.com/dcyfr-labs/dcyfr-ai)                 | Core AI harness        | npm package |
 | [@dcyfr/ai-chatbot](https://github.com/dcyfr-labs/dcyfr-ai-chatbot) | Chatbot template       | Template    |
-| [@dcyfr/ai-nodejs](https://github.com/dcyfr-labs/dcyfr-ai-nodejs)   | Node.js starter        | Template    |
-| [dcyfr-labs](https://github.com/dcyfr-labs/dcyfr-labs)              | Production Next.js app | Application |
+| [@dcyfr/ai-nodejs-starter](https://github.com/dcyfr-labs/dcyfr-ai-nodejs)   | Node.js starter (unpublished) | Template    |
+| [dcyfr.ai](https://www.dcyfr.ai)              | DCYFR Labs website | Website     |
 
 ---
 
@@ -85,11 +85,11 @@ npm run dev
 | **Language**     | TypeScript                     | 6.0         |
 | **Bundler**      | Vite                           | 8           |
 | **Routing**      | TanStack Router                | 1.170+      |
-| **Server State** | TanStack React Query           | 5.101+      |
+| **Server State** | TanStack React Query           | 5.104+      |
 | **Client State** | Zustand                        | 5           |
 | **Styling**      | Tailwind CSS                   | 4           |
 | **Validation**   | Zod                            | 4           |
-| **Testing**      | Vitest + React Testing Library | 4 / 16      |
+| **Testing**      | Vitest + React Testing Library | 5 / 16      |
 
 ## Quick Start
 
