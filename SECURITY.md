@@ -495,4 +495,4 @@ In case of a security breach:
 
 **Last Updated:** February 8, 2026  
 **License:** MIT  
-**Maintained By:** DCYFR Security Team
+**Maintained By:** DCYFR Labs Security Team
