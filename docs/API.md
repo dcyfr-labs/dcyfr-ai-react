@@ -194,7 +194,7 @@ function ResponsiveNav() {
 
 ### `Button`
 
-Versatile button component with variants and sizes.
+Button component with variants and sizes.
 
 **Import:**
 
@@ -206,20 +206,17 @@ import { Button } from '@/components/ui';
 
 ```typescript
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-  size?: 'default' | 'sm' | 'lg' | 'icon';
-  asChild?: boolean;
+  variant?: 'primary' | 'secondary' | 'ghost' | 'destructive'; // default: 'primary'
+  size?: 'sm' | 'md' | 'lg';                                     // default: 'md'
 }
 ```
 
 **Variants:**
 
-- `default` - Primary action button (blue background)
-- `destructive` - Dangerous actions (red background)
-- `outline` - Secondary actions (border only)
-- `secondary` - Tertiary actions (gray background)
+- `primary` - Primary action button
+- `secondary` - Secondary actions
 - `ghost` - Minimal styling
-- `link` - Text link styling
+- `destructive` - Dangerous actions
 
 **Example:**
 
@@ -229,13 +226,11 @@ import { Button } from '@/components/ui';
 function ActionButtons() {
   return (
     <div className="space-x-2">
-      <Button variant="default" size="lg" onClick={handleSave}>
+      <Button variant="primary" size="lg" onClick={handleSave}>
         Save
       </Button>
-      <Button variant="destructive" size="default">
-        Delete
-      </Button>
-      <Button variant="outline">Cancel</Button>
+      <Button variant="destructive">Delete</Button>
+      <Button variant="secondary">Cancel</Button>
     </div>
   );
 }
@@ -245,37 +240,35 @@ function ActionButtons() {
 
 ### `Card`
 
-Container component for grouped content.
+Container component for grouped content, with optional title, description and footer.
 
 **Import:**
 
 ```typescript
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from '@/components/ui';
+import { Card } from '@/components/ui';
 ```
 
-**Components:**
+**Props:**
 
-- `Card` - Root container
-- `CardHeader` - Header section
-- `CardTitle` - Title text
-- `CardDescription` - Subtitle text
-- `CardContent` - Main content area
-- `CardFooter` - Footer section
+```typescript
+interface CardProps {
+  title?: string;
+  description?: string;
+  children: React.ReactNode;
+  className?: string;
+  footer?: React.ReactNode;
+}
+```
 
 **Example:**
 
 ```typescript
-<Card>
-  <CardHeader>
-    <CardTitle>User Profile</CardTitle>
-    <CardDescription>Manage your account settings</CardDescription>
-  </CardHeader>
-  <CardContent>
-    <p>Email: user@example.com</p>
-  </CardContent>
-  <CardFooter>
-    <Button>Update Profile</Button>
-  </CardFooter>
+<Card
+  title="User Profile"
+  description="Manage your account settings"
+  footer={<Button>Update Profile</Button>}
+>
+  <p>Email: user@example.com</p>
 </Card>
 ```
 
@@ -295,7 +288,7 @@ import { Input } from '@/components/ui';
 
 ```typescript
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  error?: boolean;
+  error?: string; // error message; also switches on the error styling
 }
 ```
 
@@ -303,18 +296,17 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 
 ```typescript
 const [email, setEmail] = useState('');
-const [error, setError] = useState(false);
 
 <Input
   type="email"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
-  error={!email.includes('@')}
+  error={email.includes('@') ? undefined : 'Enter a valid email'}
   placeholder="user@example.com"
 />;
 ```
 
-**Styling:** Error state applies red border via `error` class utility.
+**Styling:** When `error` is set, the input gets the destructive border and the message is shown below it.
 
 ---
 
@@ -331,7 +323,7 @@ import { Badge } from '@/components/ui';
 **Props:**
 
 ```typescript
-interface BadgeProps extends React.HTMLAttributes<HTMLDivElement> {
+interface BadgeProps extends React.HTMLAttributes<HTMLSpanElement> {
   variant?: 'default' | 'secondary' | 'destructive' | 'outline';
 }
 ```
@@ -359,8 +351,9 @@ import { Spinner } from '@/components/ui';
 **Props:**
 
 ```typescript
-interface SpinnerProps extends React.SVGAttributes<SVGElement> {
-  size?: number;
+interface SpinnerProps {
+  size?: 'sm' | 'md' | 'lg'; // default: 'md'
+  className?: string;
 }
 ```
 
@@ -370,7 +363,7 @@ interface SpinnerProps extends React.SVGAttributes<SVGElement> {
 function LoadingPage() {
   return (
     <div className="flex items-center justify-center h-screen">
-      <Spinner size={48} />
+      <Spinner size="lg" />
     </div>
   );
 }
@@ -428,7 +421,7 @@ Manages dark/light/system theme preference.
 **Import:**
 
 ```typescript
-import { useThemeStore } from '@/stores';
+import { useThemeStore, getResolvedTheme } from '@/stores';
 ```
 
 **State Interface:**
@@ -439,15 +432,18 @@ type Theme = 'light' | 'dark' | 'system';
 interface ThemeState {
   theme: Theme;
   setTheme: (theme: Theme) => void;
-  effectiveTheme: 'light' | 'dark'; // Computed from system preference
 }
+
+// Resolve 'system' to the effective light/dark value
+function getResolvedTheme(theme: Theme): 'light' | 'dark';
 ```
 
 **Example:**
 
 ```typescript
 function ThemeToggle() {
-  const { theme, setTheme, effectiveTheme } = useThemeStore();
+  const { theme, setTheme } = useThemeStore();
+  const effectiveTheme = getResolvedTheme(theme);
 
   return (
     <select value={theme} onChange={(e) => setTheme(e.target.value as Theme)}>
@@ -459,7 +455,7 @@ function ThemeToggle() {
 }
 ```
 
-**Persistence:** Automatically syncs with localStorage (`theme` key).
+**Persistence:** Automatically syncs with localStorage (`dcyfr-theme` key).
 
 ---
 
@@ -478,13 +474,16 @@ import { apiClient } from '@/services';
 **Methods:**
 
 ```typescript
-interface ApiClient {
-  get<T>(url: string): Promise<T>;
-  post<T>(url: string, data: unknown): Promise<T>;
-  put<T>(url: string, data: unknown): Promise<T>;
-  delete<T>(url: string): Promise<T>;
+class ApiClient {
+  constructor(config: ApiClientConfig); // { baseUrl: string, ... }
+  get<T>(path: string, schema?: z.ZodType<T>): Promise<T>;
+  post<T>(path: string, body: unknown, schema?: z.ZodType<T>): Promise<T>;
+  put<T>(path: string, body: unknown, schema?: z.ZodType<T>): Promise<T>;
+  delete<T>(path: string, schema?: z.ZodType<T>): Promise<T>;
 }
 ```
+
+Pass an optional Zod schema to validate the response at runtime.
 
 **Example:**
 
@@ -522,9 +521,9 @@ function UserProfile({ userId }: { userId: number }) {
 }
 ```
 
-**Error Handling:** Automatically throws with HTTP status codes. Wrap in try/catch or use React Query's error boundary.
+**Error Handling:** Non-2xx responses throw `ApiError` (with `status`, `statusText` and `url`). Wrap in try/catch or use React Query's error boundary.
 
-**Base URL Configuration:** Set via `API_BASE_URL` in `src/config/index.ts`.
+**Base URL Configuration:** The default client uses `VITE_API_URL` (falling back to `/api`); see `src/services/api-client.ts`.
 
 ---
 
@@ -688,9 +687,15 @@ function Alert({ variant, className }: { variant: 'info' | 'error'; className?: 
 
 ```typescript
 export const config = {
-  API_BASE_URL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000',
-  APP_NAME: 'DCYFR AI React',
-  APP_VERSION: '1.0.0',
+  app: {
+    name: 'DCYFR React App',
+    description: 'Production-ready React SPA template',
+    version: '0.1.0',
+  },
+  api: {
+    baseUrl: import.meta.env.VITE_API_URL || '/api',
+    timeout: 10_000,
+  },
 } as const;
 ```
 
@@ -699,7 +704,7 @@ export const config = {
 Create `.env` file:
 
 ```bash
-VITE_API_BASE_URL=https://api.production.com
+VITE_API_URL=https://api.production.com
 ```
 
 **Usage:**
@@ -707,7 +712,7 @@ VITE_API_BASE_URL=https://api.production.com
 ```typescript
 import { config } from '@/config';
 
-const apiUrl = config.API_BASE_URL; // Type-safe access
+const apiUrl = config.api.baseUrl; // Type-safe access
 ```
 
 ---
