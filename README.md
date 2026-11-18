@@ -250,6 +250,7 @@ All Vite env vars must start with `VITE_` to be exposed to the client.
 
 Comprehensive guides in the `docs/` directory:
 
+- **[Docs index](docs/README.md)** - All documentation by topic
 - **[API Reference](docs/API.md)** - Components, hooks, stores, services, and utilities
 - **[Routing Guide](docs/ROUTING.md)** - TanStack Router patterns, type-safe search params, route loaders, code splitting, navigation guards
 - **[State Management](docs/STATE_MANAGEMENT.md)** - Zustand + React Query patterns, optimistic updates, pagination, cache management
