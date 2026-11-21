@@ -2,11 +2,11 @@
   "repo_notes": [
     {
       "content": "A starter template. The chosen stack — Vite, TanStack Router, Zustand, Tailwind — is the thing being documented, more than any single component.",
-      "author": "rei-doc-specialist"
+      "author": "dcyfr-doc-specialist"
     },
     {
       "content": "Routing is file-driven under src/routes/; explain that convention before listing components.",
-      "author": "rei-doc-specialist"
+      "author": "dcyfr-doc-specialist"
     }
   ],
   "pages": [
